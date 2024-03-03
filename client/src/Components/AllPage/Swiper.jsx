@@ -9,7 +9,7 @@ import {
     Autoplay,
     Parallax,
 } from "swiper/modules";
-import "../assets/css/main-page.css"; // Importing the CSS file
+import "../../assets/css/main-page.css"; // Importing the CSS file
 
 
 import { Swiper, SwiperSlide } from "swiper/react";

@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 
-import "../assets/css/login.css";
+import "../../assets/css/login.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleXmark } from "@fortawesome/free-solid-svg-icons"; // Corrected icon names
 import MentorsRecommended from "./MentorsRecommended";
@@ -26,7 +26,7 @@ export default function StudentPopdet(props) {
 
   const handleAdd = () => {
     
-    fetch("http://localhost:8080/api/user/studentdetails", {
+    fetch("http://localhost:8080/api/student/addDetails", {
       method: "POST",
       headers: {
         "Content-type": "application/json",

@@ -1,6 +1,6 @@
 // ReviewCard.jsx
 import React from 'react';
-import '../assets/css/review.css';
+import '../../assets/css/review.css';
 
 const ReviewCard = (props) => {
   const headings = Array.from({ length: props.rating }, (_, index) => index);

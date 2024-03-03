@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import myVideo from '../assets/bgVideo2.mp4';
-import TextApp from './Text';
-import SwiperCard from './Swiper';
-import '../assets/css/main-page.css'; // Importing the CSS file
-import CardHomeDisplay from './CardHomeDisplay';
-import mentor from '../assets/data.json';
+import myVideo from '../../assets/bgVideo2.mp4';
+import TextApp from '../MainPage/Text';
+import SwiperCard from '../AllPage/Swiper';
+import '../../assets/css/main-page.css'; // Importing the CSS file
+import CardHomeDisplay from '../Cards/CardHomeDisplay';
+import mentor from '../../assets/data.json';
 import { useNavigate } from "react-router-dom";
-import Login from './Login';
+import Login from '../Auth/Login';
 
 export default function GettingStarted() {
   const [login, setLoggedin] = useState(true);

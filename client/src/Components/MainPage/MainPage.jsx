@@ -1,12 +1,12 @@
 import React from 'react'
 import GettingStarted from './GettingStarted'
-import Navbar from './Navbar'
+import Navbar from '../AllPage/Navbar'
 import AboutUs from './Aboutus'
 import Contactus from './Contactus'
-import Footer from './Footer'
+import Footer from '../AllPage/Footer'
 
-import SignIn from './Signin'
-import Login from './Login'
+import SignIn from '../Auth/Signin'
+import Login from '../Auth/Login'
 
 
 

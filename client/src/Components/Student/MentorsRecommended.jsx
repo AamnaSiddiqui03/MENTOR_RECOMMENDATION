@@ -1,9 +1,9 @@
 // MentorsRecommended.jsx
 
 import React, { useState, useEffect } from 'react';
-import SwiperCard from './Swiper';
-import '../assets/css/main-page.css';
-import CardHomeDisplay from './CardHomeDisplay';
+import SwiperCard from '../AllPage/Swiper';
+import '../../assets/css/main-page.css';
+import CardHomeDisplay from '../Cards/CardHomeDisplay';
 
 export default function MentorsRecommended(props) {
   const [mentors, setMentors] = useState([]);

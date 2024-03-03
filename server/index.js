@@ -19,7 +19,8 @@ app.get('/', (req, resp)=>{
 //import the routes
 
 app.use("/api/auth" , require("./routes/auth"));
-app.use("/api/user" , require("./routes/user"));
+app.use("/api/mentors" , require("./routes/mentors"));
+app.use("/api/student" , require("./routes/student"));
 app.use("/api/recommend" , require("./routes/recommend"))
 // app.use("/api/auth" , require("./routes/auth");
 // app.get("/")

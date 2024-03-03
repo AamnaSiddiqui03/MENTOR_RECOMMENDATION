@@ -5,7 +5,6 @@ import StudentPopdet from "./StudentPopdet";
 export default function Studentdetails() {
   const [userNote, setUserNote] = useState(null);
   const [showUpdate, setShowUpdate] = useState(false);
-
   const [showPcard, setshowPcard] = useState(false);
   const [showPpop, setshowPpop] = useState(false);
 

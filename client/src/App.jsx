@@ -1,12 +1,11 @@
 import React from 'react'
 import './App.css'
-import Recommend from './Components/Recommend'
+import Recommend from './Components/RecommendPage/Recommend'
 import {Routes, Route} from "react-router-dom";
-
-import MainPage from './Components/MainPage'
-;
-import SignIn from './Components/Signin';
-import Login from './Components/Login';
+import studentState from './Context/student/studentState';
+import MainPage from './Components/MainPage/MainPage';
+import SignIn from './Components/Auth/Signin';
+import Login from './Components/Auth/Login';
 // import SignIn from './Components/Signin';
 // import LoginPage from './Components/LoginPage';
 // import SignInPage from './Components/Signuppage';
@@ -16,6 +15,8 @@ function App() {
 
   return (
     <>
+    <studentState >
+
     <div className='App'>
       <Routes>
         <Route path='/' element={ <MainPage/>}></Route>
@@ -30,6 +31,7 @@ function App() {
      
     </div>
 
+    </studentState>
     </>
   )
 }

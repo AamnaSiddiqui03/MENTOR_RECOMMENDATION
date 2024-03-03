@@ -15,7 +15,7 @@ export default function ShowAllMentors() {
     const [mentorData, setMentorData] = useState([]); // Change Mentor to mentorData
 
     useEffect(() => {
-        fetch('http://localhost:8080/api/user/recommender/student', {
+        fetch('http://localhost:8080/api/mentors/fetchAllMentors', {
             method: "GET",
             headers: {
                 'Content-type': 'application/json'

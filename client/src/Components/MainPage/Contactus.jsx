@@ -1,5 +1,5 @@
 import React from 'react';
-import '../assets/css/contactus.css';
+import '../../assets/css/contactus.css';
 import Mapbox from './Mapbox';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight , faPhone, faLocationDot} from '@fortawesome/free-solid-svg-icons'; // Import the specific icon
