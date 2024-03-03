@@ -2,17 +2,25 @@ const mongoose= require('mongoose');
 const mysql = require("mysql2/promise");
 const { error } = require("console");
 // Get the client
+let pool;
 
-
-const pool = mysql.createPool({
-    user: 'root',
-    host: 'localhost',
-    password: 'root',
-    database: 'mentordbms',
-    waitForConnections: true,
-    connectionLimit: 10,
-    queueLimit: 0
-});
+const connectToSQL= ()=>{
+try {
+        pool = mysql.createPool({
+        user: 'root',
+        host: 'localhost',
+        password: 'root',
+        database: 'mentordbms',
+        waitForConnections: true,
+        connectionLimit: 10,
+        queueLimit: 0
+    });
+    console.log("Congrats alaka connected mySQL")
+} catch (error) {
+    console.log("cld'nt connect to sql")
+    
+}
+}
 
 
 
@@ -31,6 +39,8 @@ const connectToMongo=async ()=>{
         console.error(e);
     }
 }
+connectToSQL();
+
 
 
 

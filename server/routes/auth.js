@@ -1,18 +1,5 @@
-//we have to create end points here
-
-const {pool} = require('../db/db')
-
-//connect database sql
-// const mysql = require('mysql2/promise');
-// const pool = mysql.createPool({
-//     user: 'root',
-//     host: 'localhost',
-//     password: 'root',
-//     database: 'mentordbms',
-//     waitForConnections: true,
-//     connectionLimit: 10,
-//     queueLimit: 0
-// });
+const { pool } = require('../db/db')
+const fetchuser = require('../middlewares/fetchuser')
 
 
 //main express function
@@ -39,7 +26,11 @@ const jwt = require('jsonwebtoken');
 
 // start creating endpoints
 
-//1. Create User :
+
+
+
+
+//ROUTE 1: CREATING USER
 router.post('/signup/student', async (req, res) => {
     try {
         const { email, name, password } = req.body;
@@ -56,45 +47,21 @@ router.post('/signup/student', async (req, res) => {
         // Send success response
         const data = {
             user: {
-                email: email
+                id: email
             }
         };
         const authtoken = jwt.sign(data, JWT_SECRET);
         return res.status(200).json({ success: true, message: 'User signed up successfully', authtoken, userid: email });
-    
+
     } catch (error) {
         console.error('Error signing up user:', error);
         return res.status(500).json({ success: false, message: 'Internal server error' });
     }
 });
-//2. Create mentor
-// app.get('/getuser', usermentor, async (req, res) => {
-//     //condtions:
-//     try {
-
-//         email = req.user.email;
-//         const connection = await pool.getConnection();
-//         const [result] = await connection.query('SELECT * FROM users WHERE email=?', email);
-//         connection.release();
-//         res.status(200).json({ message: 'User signed up successfully' });
-//     } catch (e) {
-//         console.error(error.message);
-//         res.status(500).send("Internal Server Error");
-
-//     }
 
 
 
-//     //1. check for validation errors
-//     //2.check for same user if exists
-//     //3. compare the passwords, check if exists
-//     //4. check the jwt
-
-
-
-// })
-
-
+//ROUTE 2 : LOGIN
 router.post('/login/student', async (req, res) => {
     try {
         const { email, password } = req.body;
@@ -123,11 +90,11 @@ router.post('/login/student', async (req, res) => {
                     if (result) {
                         const data = {
                             user: {
-                                email: email // Use the provided email
+                                id: email // Use the provided email
                             }
                         };
                         const authtoken = jwt.sign(data, JWT_SECRET);
-                        return res.json({ success: true, authtoken , userid: email});
+                        return res.json({ success: true, authtoken, userid: email });
                     } else {
                         // Passwords don't match
                         return res.status(401).json({ success: false, message: 'Invalid credentials' });
@@ -144,6 +111,73 @@ router.post('/login/student', async (req, res) => {
     }
 });
 
+//fetchuser
+
+//get all details about the user from user id
+//-> we are send the authtoken in headers from the front end and in middleware we are check if the token exist and we are retrieving details from the tokens, ie. the userid (here emailid) then we are selecting the data with that email from dbs.
+
+//ROUTE 3: FetchUser , LOGGEDIN REQUIRED(fetchuser)
+router.get('/getUser', fetchuser, async (req, res) => {
+    let userid = req.user.id;
+    //find user with this email and not select its password
+    try {
+        const connection = await pool.getConnection();
+        const [result] = await connection.query('SELECT email, name, isMentor FROM users WHERE email = ?', [userid]);
+        connection.release();
+        if (result.length > 0) {
+            res.status(200).send({ success: true, result: result });
+        } else {
+            res.status(401).send({ success: false, message: "You are Unauthorised" })
+        }
+    } catch (error) {
+        console.error('Error in fetching user:', error);
+        return res.status(500).json({ success: false, message: 'Internal server error' });
+    }
+
+})
+
+
+
+//ROUTE 4: UPDATE USER DETAILS
+router.put('/updateUser', fetchuser, async (req, res) => {
+    const userid = req.user.id;
+    const { name } = req.body; // i am only change the name
+
+    try {
+
+        const connection = await pool.getConnection();
+        const [result] = await connection.query('UPDATE users SET name=? WHERE email=?', [name, userid]);
+        connection.release();
+        if (result.affectedRows > 0) {
+            res.status(200).send({ success: true, message: "User details updated successfully" });
+        } else {
+            res.status(404).send({ success: false, message: "User not found or no changes were made" });
+        }
+    } catch (error) {
+        console.error('Error in updating user:', error);
+        return res.status(500).json({ success: false, message: 'Internal server error' });
+    }
+});
+
+
+//ROUTE 5: Delete User Details
+router.delete('/deleteUser', fetchuser, async (req, res) => {
+    //we are getting the user id
+    try {
+        const userid = req.user.id;
+        const connection = await pool.getConnection();
+        //DELETE FROM table_name WHERE condition
+        const [result] = await connection.query('DELETE FROM users WHERE email=?', [userid])
+        if (result.affectedRows > 0) {
+            res.status(200).send({ success: true, message: "User deleted successfully" });
+        } else {
+            res.status(404).send({ success: false, message: "User not found or no changes were made" });
+        }
+    } catch (error) {
+        console.error("error in deleting user", error);
+        res.status(500).send({message: "Internal server error"})
+    }
+})
 
 
 module.exports = router;
