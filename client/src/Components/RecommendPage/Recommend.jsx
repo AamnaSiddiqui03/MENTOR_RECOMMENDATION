@@ -7,7 +7,7 @@ import SwiperCard from '../AllPage/Swiper'
 // import CardHomeDisplay from './CardHomeDisplay'
 import student from '../../assets/review.json'
 import StudentPopdet from '../Student/StudentPopdet'
-import MentorsRecommended from '../Student/MentorsRecommended'
+// import MentorsRecommended from '../Student/MentorsRecommended'
 import ShowAllMentors from './ShowAllMentors'
 
 // import AddMetordetails from './AddMetordetails'

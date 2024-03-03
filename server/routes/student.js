@@ -27,7 +27,8 @@ router.post('/addDetails', fetchuser, async (req, res) => {
             WorkingOn: req.body.project,
             isMentor: false
         })
-        res.status(200).json({ id: user._id });
+        console.log(user);
+        res.status(200).send(user);
         // console.log(user._id)
 
     } catch (error) {
@@ -112,7 +113,8 @@ router.get('/fetchNotes', fetchuser, async (req, res) => {
     try {
         const user = await student.find({ userid: req.user.id }); // Using findOne instead of find
         if (user) {
-            res.status(200).json({ user });
+            res.status(200).send( user );
+            // console.log(user)
         } else {
             res.status(404).json({ error: 'User not found' });
         }

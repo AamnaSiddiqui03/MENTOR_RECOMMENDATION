@@ -1,37 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import StudentProjectCards from "./StudentProjectCards";
 import StudentPopdet from "./StudentPopdet";
+import StudentContext from "../../Context/student/studentContext";
 
 export default function Studentdetails() {
-  const [userNote, setUserNote] = useState(null);
-  const [showUpdate, setShowUpdate] = useState(false);
-  const [showPcard, setshowPcard] = useState(false);
-  const [showPpop, setshowPpop] = useState(false);
+  const context = useContext(StudentContext);
+  const { notes, fetchDetails } = context;
+
+  useEffect(()=>{
+    fetchDetails(); 
+  })
+
+  const [showPpop,setshowPpop] = useState(false);
+  const [showUpdate, setShowUpdate]=useState(false);
 
   return (
     <div>
-      <StudentProjectCards
-        showPcard={showPcard}
-        showUpdate={showUpdate}
-        setShowUpdate={setShowUpdate}
-        showPpop={showPpop}
-        setshowPcard={setshowPcard}
-        setshowPpop={setshowPpop}
-        userNote={userNote}
-        setUserNote={setUserNote}
-      />
-      {showPpop && (
-        <StudentPopdet
-          showPcard={showPcard}
-          showUpdate={showUpdate}
-          setShowUpdate={setShowUpdate}
-          showPpop={showPpop}
-          setshowPcard={setshowPcard}
-          setshowPpop={setshowPpop}
-          userNote={userNote}
-          setUserNote={setUserNote}
-        />
-      )}
+        <StudentPopdet showPpop={showPpop} setshowPpop={setshowPpop} showUpdate={showUpdate} setShowUpdate={setShowUpdate}/>
+        <StudentProjectCards showPpop={showPpop} setshowPpop={setshowPpop} showUpdate={showUpdate} setShowUpdate={setShowUpdate}/>
     </div>
   );
 }

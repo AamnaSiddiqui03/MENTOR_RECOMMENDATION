@@ -1,39 +1,26 @@
-import React from 'react'
-import './App.css'
-import Recommend from './Components/RecommendPage/Recommend'
-import {Routes, Route} from "react-router-dom";
-import studentState from './Context/student/studentState';
+import React from 'react';
+import './App.css';
+import Recommend from './Components/RecommendPage/Recommend';
+import { Routes, Route } from "react-router-dom";
+import StudentState from './Context/student/studentState'; // Corrected import
 import MainPage from './Components/MainPage/MainPage';
 import SignIn from './Components/Auth/Signin';
 import Login from './Components/Auth/Login';
-// import SignIn from './Components/Signin';
-// import LoginPage from './Components/LoginPage';
-// import SignInPage from './Components/Signuppage';
-
 
 function App() {
-
   return (
-    <>
-    <studentState >
-
-    <div className='App'>
-      <Routes>
-        <Route path='/' element={ <MainPage/>}></Route>
-        
-        <Route path='/recommend' element={ <Recommend/>}></Route>
-        <Route path='/login' element={ <Login/>}></Route>
-        <Route path='/signup' element={ <SignIn/>}></Route>
-        {/* <Route path='/virtualmeet' element={ }></Route> */}
-      </Routes>
-   
-
-     
-    </div>
-
-    </studentState>
-    </>
-  )
+    <StudentState> {/* Wrap the entire application with StudentState */}
+      <div className='App'>
+        <Routes>
+          <Route path='/' element={<MainPage />} />
+          <Route path='/recommend' element={<Recommend />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/signup' element={<SignIn />} />
+          {/* <Route path='/virtualmeet' element={}></Route> */}
+        </Routes>
+      </div>
+    </StudentState>
+  );
 }
 
-export default App
+export default App;

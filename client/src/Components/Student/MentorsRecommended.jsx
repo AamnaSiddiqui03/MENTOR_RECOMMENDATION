@@ -1,8 +1,5 @@
-// MentorsRecommended.jsx
-
 import React, { useState, useEffect } from 'react';
 import SwiperCard from '../AllPage/Swiper';
-import '../../assets/css/main-page.css';
 import CardHomeDisplay from '../Cards/CardHomeDisplay';
 
 export default function MentorsRecommended(props) {
@@ -11,7 +8,7 @@ export default function MentorsRecommended(props) {
   useEffect(() => {
     const fetchMentors = async () => {
       try {
-        const response = await fetch(`http://localhost:8080/api/recommend//${props.id}`, {
+        const response = await fetch(`http://localhost:8080/api/recommend/${props.id}`, {
           method: 'GET',
           headers: {
             'Content-type': 'application/json'
@@ -29,7 +26,7 @@ export default function MentorsRecommended(props) {
     };
 
     fetchMentors();
-  }); // Fetch mentors when props.id changes
+  },[props.id]); // Fetch mentors when props.id changes
 
   return (
     <div>
