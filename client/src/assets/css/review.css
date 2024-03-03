@@ -1,0 +1,60 @@
+/* review.css */
+.revstudent-toptag {
+    background-color: rgb(205, 118, 25);
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px;
+    border-bottom-left-radius: 8px;
+    font-size: 12px;
+  }
+  
+  .revstudent-review-card {
+    height: 340px;
+    position: relative;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    width: 450px;
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0.s, 0.5, 0.1);
+    text-align: center;
+  }
+  
+  .revstudent-user-avatar {
+    border-radius: 50%;
+    width: 105px;
+    height: 105px;
+    border: 5px solid gray;
+    margin: 10px auto; /* Center the image */
+    box-shadow: 0 4px 8px rgba(0, 0, 0.2, 0.3); /* Add shadow effect */
+  }
+  
+  .revstudent-review-content {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+    text-align: justify;
+  }
+  
+  .revstudent-reviewer-info {
+    font-style: italic;
+    color: #888;
+  }
+  
+  .revstudent-website-info {
+    font-style: italic;
+    color: #888;
+    margin-top: 10px;
+  }
+  
+  .revstudent-star-rating {
+    font-size: 24px;
+    margin-top: 10px;
+  }
+  
+  .revstudent-star {
+    color: #ffd700;
+    margin: 0 2px;
+  }
+  

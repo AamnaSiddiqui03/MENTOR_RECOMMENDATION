@@ -1,0 +1,74 @@
+[
+    {
+      "id": 1,
+      "tag": "Ai and Ml",
+      "avatar": "https://images.unsplash.com/photo-1544717305-2782549b5136?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8c3R1ZGVudHxlbnwwfHwwfHx8MA%3D%3D",
+      "content": "My mentor was incredibly helpful and supportive. They guided me through difficult concepts and provided valuable insights. I am very satisfied with both my mentor and the website that connected us.",
+      "reviewer": "John Doe",
+      "role": "Student",
+      "platform": "NammaMentor.com",
+      "rating": 5
+    },
+    {
+      "id": 2,
+      "tag": "Programming",
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvLrRNv65EUvPR3awUtbBsv5ad8-_bCt-UAQ&usqp=CAU",
+      "content": "I can't thank my mentor enough for their invaluable guidance throughout my project. They were not only knowledgeable but also incredibly patient, helping me navigate through challenging concepts with ease.",
+      "reviewer": "Jane Smith",
+      "role": "Student",
+      "platform": "NammaMentor.com",
+      "rating": 4
+    },
+    {
+      "id": 3,
+      "tag": "Data Science",
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmKf1WkJzxeXh6qBVqJ7hMr_nOkdMqxUa9fA&usqp=CAU",
+      "content": "My mentor and this website were lifelines during my project. Together, they helped me navigate complexities and emerge successful. Grateful beyond words!",
+      "reviewer": "Alice Johnson",
+      "role": "Learner",
+      "platform": "NammaMentor.com",
+      "rating": 5
+    },
+    {
+      "id": 4,
+      "tag": "Web Development",
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvHhKgMsEtgm9iKMopR9PQHVSYOrh8rLVD0g&usqp=CAU",
+      "content": "Kudos to my mentor and this platform for steering me through challenging concepts. Their guidance was spot-on, and I couldn't be happier with the outcome",
+      "reviewer": "Bob Wilson",
+      "role": "Participant",
+      "platform": "NammaMentor.com",
+      "rating": 4
+    },
+    {
+      "id": 5,
+      "tag": "Artificial Intelligence",
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStqEF2cygBlrcSNvdidzdw4XZcJEaWRUECBg&usqp=CAU",
+      "content": "Big shoutout to my mentor! Their expertise and encouragement were exactly what I needed to excel in my project. Thank you!",
+      "reviewer": "Emily Brown",
+      "role": "Apprentice",
+      "platform": "NammaMentor.com",
+      "rating": 5
+    },
+    {
+      "id": 6,
+      "tag": "Machine Learning",
+      "avatar": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBQWFRQSFRYVGBISEhESERISEhEREREPGBQZGRgUGBgcIS4lHB4rHxgYJjgmKy8xNTY3GiQ7QDs0Py40NTEBDAwMEA8QGhISGjEjISE0NjE0MTQ0MTQ0NDE0NDE0NDQ0NDQxMTQ0NDQxNDE0NDQ0NjE0NDE0MTExNDE0MTcxMf/AABEIALcBEwMBIgACEQEDEQH/xAAcAAABBQEBAQAAAAAAAAAAAAAFAAIDBAYBBwj/xABBEAACAQIFAgQDBQYEAwkAAAABAgADEQQFEiExQVEGE2FxIjKBB5GhscEUQlJygtEVI2LhksLxM0NTVHOTotLw/8QAGQEAAwEBAQAAAAAAAAAAAAAAAAECAwQF/8QAIhEAAgICAwEAAwEBAAAAAAAAAAECEQMhEjFBBFFSYXEy/9oADAMBAAIRAxEAPwDy9Gl7L6iq6seAQTKASPp7GFGR7Tk/iWjoUarbcGHMBnCVTZCDbmeUZICwAAvN74WwzKxJFuIkbRk2bEjaDMRT+MHfnvCnSDcYbGTk6NYdkykWET79YPGs8GS6mEzc7Q1CnZMw43nXW45MqNrPEeHYcxOVqilGnZMgIHJgrNa7C9u0IPW25mbzrMQAZUH4iMn5Zis7xpLEG97mV8oc6gSZXx76nJPUyxl1TcAWmz0jkirZvcDXJUcwzg069YFyqixsT26TRYanOftnctRJjIlY3MslNpCE3lS6JXZBiU1C0AZjgDp2F5oMRjaKGz1Kadw9RFN/qZYU03QOrK6EXDKQykehEUU0Ekno8zxWSMwuVghsjJNrT0rNsVTRG42Ewy5tdzttNYybOXJGMegTishZRfn0lSlhbXuNx6TQ4jHn6SFsTTtvYGVZmCUqKnI/CVMTjr9IQx5QjaBqidhASIXxPaVrE73iqXnLmBdDakjAjysbaBSHulpymd5wmPpkdYAFaL0dO4+KXKVRAtwB9ZnqvO0Qrta147JcQqcYYoI1mKFi4lgPJMMNTqDwSJFaPp8xDPX/AAxhaYRQLf3m0w1JRxaeU+EMwAspveei4CuWsAYl2bxaaDttoMxNO7CE0G0HV/mEmfRcOyVEAE5UpzobidcyXFcSlJ8hKoAlbEqLRuKxAUXgXE5qd7GS4qtBzp7JcZiggMx2b44HkS3j8cW2vM3mVzveaQjRzZMnJ6B+Ke9zaR4GpZxseZxmEfhqoVgSBa80aM0eq5BUDIpt0E0dJRMp4cxqMosenE1FNrjaYdM7Y7iVc8zuhhkV6zEB20oFVmZmtfgcD1O24nl+Y+NK9R3Oo00uQKSMCpT1cAEk+8E+Ns6evjKvxXp0XalSXhQqGze92BN/7QJTWpVbSiFieii9j+k1SSVswk23SCD5sA7ED4anzjm4sbg353J++EMp8TGmhXU9rhtKuygsB1tyD1kOA8E4upa6MoI1C4AHsSTsYMzLJ3ov5b6lYcgja/vGpJicZLbNRjM2DotT4vjW7XBsrXsQPS8Eti16SLKqz6fK2O/BsVZCpFu9t/vlXF4F1jMmtkpzPe3SOr4lWG0D+UbyXy2HMApEhc3hjADb4ht7QKpEMYLGAL0gJk1bCUyf9pC+VId1Mhr48XlVsxKnY7QErO4nB6ZTalLj424uYxKymFFJsoMsjcS05F5FU2IiKTIDechrDPSK/EOnaRLhEc/CesdByBcUPf4Ss7ChckB0aEsvwwa5PSC1hTLEcnSv720BhzLKRV/hJHtPRvCRJLXJO45gHJPDx0KxO/M1uTYPyyfWQmaxjSNJ0gjFqSwtCRqbSuEubxT2jSOmcpLtK+LYiWmqBeogvNceqqTcTNy1RXWwZmuKAUi8y74rYxIK2JqFU+UHc22E0OA8J2ILkkDoeCZpCL9OebcnoB4PK6tQawux4v1gbO8E1M2dSL9ek9qw2DRVAAGwmd8W5UKlNgBvbY26zQlw0eNOqysTvtJsTTdGZG5BIMYiRkG18JLxcfjPRsCfhE8nyLHlGCg9tjPUMncsgJmDVM6ccrieJ+NsqbD42tTPy1HNana5ujsSPre4+k1/hLFYPDIqO6+YbFwBqYN2NuPaFftLyQOcPi15pVKdKp603caG+jkD+sytlfhrEGyakSgP4VQ1Kht8zMQTe9zJyNOkzTFFpto2FXOKKUhVAd1NrCmt2MzGc4hcZSIfDPTRwQtdzTdqZ6MUB1ae/aH8KMOlDyXdLFtHxOqszEbC/ciOwfhLDI3mpqvzYOQp26gc7d5Cbo1klezxJKL0a/luLVKVQqw5B6gg9iLEe8M6Wqcia7xB4ZSvi3cEg08PSIRWVdTanUsbgkgKBsLX7i2+fweKRWKW+JSVPowNjOiM1Jf04cuNxf8ACLD5IOTFjcoBG1oRxFc22gbE45+BGZA58iY3IlWrlrrNVhsUdFzbiU6mIvfrKFZkqtNhzICZoMWFa+0D1aBvxApMqzl5KUjCIizgkgQmMUx2sxiH6iBbpCeT6N7/ADDcQQXjqVUg3EBNWalq8UzXnP3nY7J4jKaWhrK8QEZT2MFg7RysRuJD2adHsuRZoHQADpDQxQE8/wDAmMurA8rL2beISlZKYFwSLntMHy5UjpTXG2blK9xtHLigvMrZe+pAe4E5XphjFyZSSBud4ksDpYj2mPzVn0/MT9ZsMdhtrTOZvhTbibQSoyyvdGk8DYYCkrW3bc95sdA6TN+FCvlJ3sLj1miFSaELokWQ4qiGBnXe0kpteAzxb7QsuNKoKir8L7H0MxwqEz3bxhk4q0nFt7Ej3nlGEyNibEcGxibozcd6KWVUXLgi/M9k8P7It+bCY7L8l02PUTUYOoyC3aZt2zeEeKO+L8LrRTc2UsNjYaiPhJ6cgQXl2fHySQpdwANA5vxCWPxgZWVgCpFiDuCJh3xf7NVY7+W5LIexJuyH6naZTjbtG8JVphXKqCgs5RA9R9emtUSmSe2jdvv7Ca3CYytZvNVVFvh0sH297D8pk6fizDLZtGtxblQWHqI3FeNVcaUpPq4AtYEmRUqNHKPQUx+ZojVXuhrBUWmp3fU2u9vTi8xS5QRepc6iST3JPJhTR/3lX/tH+I/6R0URPXHQzfHGla9ODPJylT8Azu6m29vWMeqo3aWcXi1HIuYFxDauJqjAlxGYjgSvh8wUHeQPgmPErvgXEYUgt+2oZA+KS8FlWXmQNAaRYxNRb7SqZ1UvHmnEUtDI7acKRogM6wiRDOMZLhieIxM7oilv9nPaKBNh3CZJdgp+sPr4eTSNhBiVKuokA83EK0jWZb73PvGkXf8AAxk2UaLhBzJKnhJmqio5v6DpCnhZ7INex63mkaunS0TirstN1RRw+EKKB2ERp2lx6wtM3j81K1kpjhjvI4JF8mGVwGrfpIMTk6tsQISw+JXSNxG1MSI1FITk2VMvy4UxYcS6qbylicxCC8G0/ESE9fug5JaGotmmdLiPw62gRfEVL+IR3+P0/wCIQ5L8hwl+AtjKYYETJV8uVHJA53hN8+S3IgTG5sGO0iU4mkYSstalWQ1MV2gXHZoiLqqOFHS53J7Ack+0Ev4gd110KLGncjzql1pgjrZbkyEpS6Ro5Qj2zRVqhPMzFXFJiKjUkBK0zYv+6znlV9tt/WD8dndby3u6sWsAaasi77abkXtv3PHMf4IrKW8g2FQFqlM8eYCAWX3Fr+1+0coOMW/SI5Yykl0iehkulyragvp27zRZdk6BhpX4RY6jyYSCg2JXdedpeotcXUegAE5HJs6lFLpGY8Z5Y+jz6dylFB51MbM9In50PRl3PqD6WmOqmoiiopL0XF1qKCSB/qA4PP3T2Z6aJRqVKpCoKbGoW4C24/2nlGSVQUdQv+X5j6AbEKhYlUbsbWnbgvjTOD6Yx5WgG2K18EH2N/whHLgD8whDH4NKzIpVEYKymotkfUBcMSPm279jB2DBVWDMrMjsupTfWoAOoW7XsZs4nM0WsRWROJRxOLHO0ixtUHeDHcmISRYqVlbpKppgmRm8t4CjqMB9HVRVkNdh0l2rgbnYxy5fYXMBWCwpbpHrQtzCOlVkVeukQ7Bla19p3D1NLAztVOokdoFLoK/4gPSdg1VEUZNI9jpUkPSEKCJa1pUoUpfo05J08SejTHSXUQSGikuIsYCCQdXy5S6sRwYYRYikAIqVAASTyhJVWd0xiBGY4XUCBAa5UQDtNiyAyN8OLSHGyoyowjYWzbyRUE0OKyvVK6ZH7znlhk3pnTHNFRpoFGkJWqUwAT0AJ+gE0qZOBMb4gz8U8S+FW6JTFNalQAlruAW4I2s68djDHgkntk5Poil0Yd9dV2q1gxu7Ki6tC/CbaRdSLDbbaF3xbaVCu6VFFkDMdLr0Um9j+cmxTowsAQoUEFWGtmtYc9bciCHq3Gnn+Yc+4nckec27OYvU99XQO7AC24Fv1v8ASVKbFSrqSrKQVZTZlYcEGEEpXVgxOorwDvotx6/9INYbH2vAD1Dwd4np4kihXCriSLI1gqV7duz/AOnr07DW4mpRwyNWdlSmtizG/wBABySegG88IyzAVsRVSlQUtWcgppOkoV31lv3LWvq9O9ptftEy7H6aNXEFPIp06aOaTFkTElbO7KQN2Y2B3Fttr2PPLHHkjqjmlxdlDxV4ufFkqoKYVDdE6u3R39ew4HrzAmGazsEvpqW62+JRbnpKLsOB8qj72PWWaFUUx5jcWtY/vEnVa33TdJI5m23sv/s6Kpq1nKjfSAAWb0F5pvCj021VwAL0/LprpAKpqJY35Nzzf/Yef5hivPdFGvSw0guQST2AHA++aTJMatHTRbWahbUxbghgLIL9rH3hYLQ/xjliKBUQBXIu4Gwa5te3feZFBaG/EuaGpUq6fkVkpp6kD4j9/wCUDlCLhuQSD7xMTGORGriiosJHUMgJiGkW6OLe8nbMXg5HlxaVwDAGkcfFXG8qE3Ms1KIEiZQIAqG3iMchE6FvvEMZFHRQA90p05cpLOaRJkSI3smpywrSsokkYFpHjtUqo0kDQET6p0PIQ0QMAJw07qjFjowFHbRhE5eIB5nhni1wuYY5T+8wt7+WhH4T2rH4xKVN6rkBKa6mJIUdhcnjcjefPue4tquKr1GvraoSwNrqQAujb+EAL9I0RJ6K1PFkAgnjuen95KmJNxcEt3I2I7yifmv15G19wb8SdKll+FrHctsLknkf9ZSZnQSSrZ/w+9VMrsLNb1Zfx/2jadYGxJ3Jv6nYD9JzEPuT6hh/+++OwND4Dz2ngsV5lYHy2pvSd1Us1NXZGDWG5F0ANv4psvtB8ZYZ8KcPRbzXxKowZVby1oh7l9TAAm6FQB19p5pgsL51ZKQNvMIF+bL8xP0AM12b+FqfkAUy+uhTfy9TB9YuXKtt1JNiLWv2nHny4ceWKm6b6OjFjnKLaWkYcmy278/WX6mX6qCVm2V6tVA12b5URvl9nG/vBPmXt73hRcQQmnoN7X4NlHH9P4mdZznMZS06HAN1qqy6hpulr2v9IzNMUHfzLEKVAHcMOLyw1F/KZi/wFSRTYbkcgrf1HSDiVKMGNuoPrGI5hiC1JObuC38xaw/vJKrhy7Dg1HI/lLXH4SrhjYM/WxVPQkWLfQE/UjtLeWYNqusL+6FP0Nx+klvQ6soOsiZISxOXOptY3kFXAuBe0mx0UeJZ/aDa04cK1rzlPCkwsdDHe8SmPqULSLTCwoQO8sIwtIVQCcdoCZJqE7K0UB0fQ1H1llZSRjLCMYkbFkR15XBMcTtARMjSQNK9IyYRjJA07eMBjgYCHo8lBldjJEeAEt5wzl4rxgZ3x6wGAxNyACiDfqTUSw+s8SpLr3a91Fg4+YAbAH+Ifj6z0v7Xsw00aGHB3qVGqMvdEWwv6anv/TPN8rYEvTOxZSVv3G9o0ZSZTxiEb7H1H9p6n4O8OYGvhKFZ6IaoysHfXVUs6synhh2nl2NuCAe09T+ynE6sGyf+FXdR/Kyq35s05frlKMLi6pnR8yjKVNXoMjwXl/8A5cfSpW/+0TeCsAeaB/8AdrD/AJoevOieevoyfszueGH6oBYfwXgEZXSk6unyMuIr3H3tJcwyHDhGLHEGyVLAYioTshNgL7wzKuZH4CO61ByN7026HYy8eRzyR5b36iJ41GL46PnqiLsoPUgH8pexTC7272t7ESjhG+NT2u33C8vYpLO6jqw+4hW/WeweUT2dlJYkhFIS/S8G4s7fUQ8rBQF6EffAmZpYkf6h+UH0JdjzTGgfEOON4V8G1wtdlPD0nH9QZSPwBgpHBpkfvbC1h+cK+G6AWvRB3eo7D+VNDxSVoqLph/FlNVyBB+NxaEWsJocZll+kDYnJCekzRo7MzisWOAJSOKI4h/EZC3aD62TOOhhonYKeqTOC8unLmHSRvRYdJQis0jMnak3aNNEwAgik3lHtFAD35Hk6NKKPLCVIjUtqYn4kSVIqlTaACpvJ1eUExAk6VxaAFoPHBpUGIEcMSIAW7zqtaV1rXjGrmAwmrxaoNpVzLOswTsDyT7TH1491uP8ALo0lUFrKAQWI97uTMoC63toXTYm7AsD063F4S8ctfH4o7/Og37ikg/T8pRRrhQ2hUKjSoGsW7lb/ADHnv3PSWjGXYPxNZmPxfgLT0L7IcRviaf8A6Tj/AOan/lmYx2T0hSWojuxPBJWx+ltt/wA4U+zyt+z4hnqHTSek9PWQ2k1AykKO52aYfTFyxyRrgkozTPYQY4Qdg80o1GKJUVnA1FQSG097He0ILPGaadNUetaatDxK2PPwj3YckfuN2H57TmIxYQhQCWIJsNyB02gBvEDl3XynIp6jdkYAMoJ326/jeb4Ivkn/AEzn/wAtHiuEO/8AS35GFMYb1bdfgv2Hwj+07nOKq1K7V6lDyTUC6E8tqaaVUKLXA1bWuZXWo2oufmJvwLbC09qLtHjzVMK4mnpCkkbE3A3PIBFv6gfaBMxe+/c379JOzk8yni23X6/pB9ErsmosNN7f2l/JcV5WIo133VKqaulkN1Y/QMT9ILwzb7fcAST9BLeIJYpTCPqYhQpXSWZjYAA9ybQ8H6e5PhhK74Re0tYGm60qaVCDUWnTVyvylwoDEfW8mKTOjcB1sEO0H1sEO00zJIXogyeIzJVcAvaU3ypT0E19XBgynUwhEKYqRlHypewld8rXtNNXpHtB9WmYWxUgH/hSxQloaKBNI1aPJkqSnTUywgMosu0qk7WfYyBVMc6XWAHKGG1C8tphZWw1SwtLa1oICRMGJKuFEgFeSCsYAWUogTvkrKwqmPVzGBI9IDcRyESMtGq1jADzL7Vcn0VVxa/LXslQdqyLsfqgH/AZggbcT6JxuFp1kanVRXRvmVhcehHYjuNxMB4i+zxQvmYO5Ivro1H1Fh3Rz19Dz37szlEwVDM3VVpqBYNck/ESegA4AlzLqhatT1sdQcVGuTYIil7e20F4jCujlXUqymxVgVYH1B3Eb57XvffSVJ7gixjTIo0VHMQzNUYfEC5p2JW1lsCbHnp9TLmGrF3SmGPxaVNmbm25O/czJrXIl/JMwVKyM5sgD3Nr2JQ6T/xWkyqnouF8kr0ep0MMtPSEeyqLad2Y+pPUnuYTw2KZjYC7W21gCZTBZmrr8DqyEkA7jf1BMtk/CfhbcWU03CkHvfoJ520z1k01oFfaO48tVeshqrVV1ooo4IIO977A34mCvD3jeo6GlQIpBbmr/lsHfVuv+Y3c3PUzPqd56GFVE8z6HcyWVMX0PvLU5TwpqF1UqCtOpUAa41BELso9dINvaaPowXZFldMs62uLEG6mx+hhbOndKiVAbVBpqLuCVZTdTt6iU8iRi11F7dB1lnxCPiDtfUUFwRa1ukPB+ntWGr60SoOHRHHsyg/rJtYkWXYfRRooeUpU1PuEAMlanINxrMJEziPKyNrRARvUlWpV9Jacj0kLkQAHYhz2grEI0OuwlSppgJgHQ0UKWHaKKhFtMQveSpil7zO03tH+deFBZpFxayU4tbTNo5lhX2BjHYdprcXkyKZTw1TYb9JYSrAZY0yRVkHnSRa0ALCrHqJXWrHeYYAWgI11kau0V2gBLTPSSSm4YbyxSa+5+sBnhvjPGF8diWBuoqGmByLIoT81MB+Z6SXE1dbvU/jd3N+bsxb9ZHplmLZ1HW9mJA7hQ1vpcQjl9HDll111CX+JWpVBcW4vYiDNMWmS4uSq6HGSi7qz1vJMDgGXSlSg1+Qrpe/8t7x/iTJadPD1alP4SlGqysGsocL8PItf6zyOvRsQDb5VP3i/6iMudOm50g3C3OkHvbvOWHy8ZKXJv/Tpl9Vxcao4zkm7Ekki5JJP3y4olNhLiHa87InHI60iFQqbg2NmFxzYgg/gTH1HldztGxIIeHHK1RvYEEe56CTZ45YMSCLA88n6Sll602KoxZX1AAg23vtv0N4Wx6HWlBnDVGdUbgtYkAKxGxbf7uYeD9PbqQ+Ff5V/KOInONu204XkG5xlkFSleTF5GzwApPh/WV2T3hB3lZzfpEBUemJC9MdpLXLDe0gFW/WxgIj0+kUk8v1igBnqYF95bo0VJiigSi0qgR1QC0UUTKLWGIsPaWBFFBDLKttEHnYowHq0lBnYoAPDRFoooAdDRhqaVe/AVj9LGKKAz59FrC1/kUn39Np2KKWYPsU7FFGI5Wcsbnkm8baKKIYxpYRrAewnYoIGMZpGTFFBiRNhSFs9rkNdeLAg7H75fyKjqxOG3J1Yihuep81SbxRQH6e6kxhiikmxwxhiiiAYxkTGKKAEbSlXoA+h9IooAV/Kbv8AjFFFAR//2Q==",
+
+      "content": "I owe a debt of gratitude to my mentor and this platform. Their combined efforts paved the way for my project's success. Couldn't have done it without them!",
+      "reviewer": "David Lee",
+      "role": "Trainee",
+      "platform": "NammaMentor.com",
+      "rating": 4
+    },
+    {
+      "id": 7,
+      "tag": "Data Analysis",
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgsMUWoT8kWJaJyNS68Y7F4pvDn9NMEghTNg&usqp=CAU",
+      "content": "While I appreciate the support from my mentor , I must admit I expected a bit more. The experience was satisfactory, but there were moments where I felt more could have been offered to enhance my journey",
+      "reviewer": "Sophia Taylor",
+      "role": "Student",
+      "platform": "NammaMentor.com",
+      "rating": 3
+    }
+  ]
+  
