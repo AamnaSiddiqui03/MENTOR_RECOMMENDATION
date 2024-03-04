@@ -111,11 +111,13 @@ router.post('/login/student', async (req, res) => {
     }
 });
 
-//fetchuser
+
 
 //get all details about the user from user id
 //-> we are send the authtoken in headers from the front end and in middleware we are check if the token exist and we are retrieving details from the tokens, ie. the userid (here emailid) then we are selecting the data with that email from dbs.
 
+
+//FETCHUSER
 //ROUTE 3: FetchUser , LOGGEDIN REQUIRED(fetchuser)
 router.get('/getUser', fetchuser, async (req, res) => {
     let userid = req.user.id;
@@ -125,7 +127,7 @@ router.get('/getUser', fetchuser, async (req, res) => {
         const [result] = await connection.query('SELECT email, name, isMentor FROM users WHERE email = ?', [userid]);
         connection.release();
         if (result.length > 0) {
-            res.status(200).send({ success: true, result: result });
+            res.status(200).send({ success: true, result: result[0] });
         } else {
             res.status(401).send({ success: false, message: "You are Unauthorised" })
         }

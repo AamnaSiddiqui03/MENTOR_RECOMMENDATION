@@ -6,6 +6,7 @@ import StudentState from './Context/student/studentState'; // Corrected import
 import MainPage from './Components/MainPage/MainPage';
 import SignIn from './Components/Auth/Signin';
 import Login from './Components/Auth/Login';
+import ProfilePage from './Components/ProfilePage/ProfilePage';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path='/recommend' element={<Recommend />} />
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<SignIn />} />
+          <Route path='/profile' element={<ProfilePage/>} />
           {/* <Route path='/virtualmeet' element={}></Route> */}
         </Routes>
       </div>

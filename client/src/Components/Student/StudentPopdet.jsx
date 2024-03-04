@@ -6,17 +6,23 @@ import { faCircleXmark } from "@fortawesome/free-solid-svg-icons"; // Corrected 
 // import MentorsRecommended from "./MentorsRecommended";
 
 export default function StudentPopdet(props) {
-  const [showUpdate, setShowUpdate] = useState(false);
+  // const [showUpdate, setShowUpdate] = useState(false);
+  // const [details, setDetails] = useState({
+  //   name: "",
+  //   Institution: "",
+  //   interests: "",
+  //   project: "",
+  // });
+
+  const context = useContext(StudentContext);
+  const { notes, addDetails,updateDetails } = context;
+  const popstate = useRef(null);
   const [details, setDetails] = useState({
     name: "",
     Institution: "",
     interests: "",
     project: "",
   });
-
-  const context = useContext(StudentContext);
-  const { notes, addDetails, updateDetails } = context;
-  const popstate = useRef(null);
 
   const cut = () => {
     if (popstate.current) {
@@ -30,8 +36,8 @@ export default function StudentPopdet(props) {
        addDetails(
         details.name,
         details.Institution,
-        details.interests,
-        details.project
+       details.interests,
+       details.project
       );
       props.setshowPpop(false);
     } catch (error) {
@@ -42,11 +48,13 @@ export default function StudentPopdet(props) {
 
   const handleUpdate = () => {
     updateDetails(
+      props.notesid,
       details.name,
       details.Institution,
       details.interests,
       details.project
     );
+    // props.setshowPpop(false);
   };
 
   const handleChange = (e) => {
@@ -153,7 +161,7 @@ export default function StudentPopdet(props) {
               onChange={handleChange}
               required
             />
-            {!showUpdate ? (
+            {!props.showUpdate? (
               <button type="button" className="btn" onClick={handleAdd}>
                 Add Details
               </button>

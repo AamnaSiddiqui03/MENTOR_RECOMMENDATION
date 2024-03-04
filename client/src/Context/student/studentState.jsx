@@ -63,6 +63,7 @@ const studentState = (props) => {
 
 
     const deleteDetails = async(id) => {
+        console.log("this is my idddddd", id);
         await fetch(`http://localhost:8080/api/student/deleteDetails/${id}`,{
             method: "DELETE",
             headers:{
@@ -71,7 +72,7 @@ const studentState = (props) => {
             }
         })
         
-        const newNotes= notes.filter(note=>{ return note.id!==id} )
+        const newNotes= notes.filter(note=>{ return note._id!==id} )
 
         setNotes(newNotes);
     }
@@ -87,7 +88,7 @@ const studentState = (props) => {
             }
           });
           const data = await response.json();
-          console.log(data);
+        //   console.log(data);
           setNotes(data);
           // Further logic to handle the response data
         } catch (error) {

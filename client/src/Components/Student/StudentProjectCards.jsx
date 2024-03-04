@@ -33,6 +33,7 @@ export default function StudentProjectCards(props) {
                 className="text-orange-500 mr-8 hover:scale-105 cursor-pointer my-3"
                 size="xs"
                 onClick={() => {
+                  props.setNotesid(note._id);
                   props.setshowPpop(true);
                   props.setShowUpdate(true);
                 }}
