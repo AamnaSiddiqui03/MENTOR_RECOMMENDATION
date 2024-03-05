@@ -21,11 +21,14 @@
     "@types/mapbox-gl": "^3.1.0",
     "concurrently": "^8.2.2",
     "mapbox-gl": "^3.1.2",
+    "peer": "^1.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-map-gl": "^7.1.7",
+    "react-player": "^2.15.1",
     "react-router-dom": "^6.22.1",
     "react-simple-typewriter": "^5.0.1",
+    "socket.io-client": "^4.7.4",
     "swiper": "^11.0.6"
   },
   "devDependencies": {
