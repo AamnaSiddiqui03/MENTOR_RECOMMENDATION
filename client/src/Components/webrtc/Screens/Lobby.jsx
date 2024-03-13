@@ -3,9 +3,7 @@
 import React, { useState, useCallback, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSocket } from "../../../Context/webrtc/SocketProvider";
-import Navbar from "../../AllPage/Navbar";
-import Footer from "../../AllPage/Footer";
-
+// import Navbar from "./Navbar"; // Import Navbar component
 import "../../../assets/css/lobbyscreen.css";
 
 const LobbyScreen = () => {
@@ -18,34 +16,30 @@ const LobbyScreen = () => {
   const handleSubmitForm = useCallback(
     (e) => {
       e.preventDefault();
-      if (socket) {
-        socket.emit("room:join", { email, room });
-      }
+      socket.emit("room:join", { email, room });
     },
     [email, room, socket]
   );
 
   const handleJoinRoom = useCallback(
     (data) => {
-      navigate(`/room/${room}`);
       const { email, room } = data;
+      navigate(`/room/${room}`);
     },
     [navigate]
   );
 
   useEffect(() => {
-    if (socket) {
-      socket.on("room:join", handleJoinRoom);
-      return () => {
-        socket.off("room:join", handleJoinRoom);
-      };
-    }
+    socket.on("room:join", handleJoinRoom);
+    return () => {
+      socket.off("room:join", handleJoinRoom);
+    };
   }, [socket, handleJoinRoom]);
 
   return (
     <>
-      <Navbar />
-      <div className="webrtc-container" style={{ height: '470px', marginTop: '50px' }}>
+      {/* <Navbar /> Use the Navbar component */}
+      <div className="webrtc-container">
         <h1 className="aboutusH1">Lobby</h1>
         <form className="webrtc-form" onSubmit={handleSubmitForm}>
           <label className="webrtc-label" htmlFor="email">Email ID</label>
@@ -66,10 +60,9 @@ const LobbyScreen = () => {
             onChange={(e) => setRoom(e.target.value)}
           />
           <br />
-          <button className="webrtc-button" onClick={handleJoinRoom}>Join</button>
+          <button className="webrtc-button">Join</button>
         </form>
       </div>
-      <Footer />
     </>
   );
 };
