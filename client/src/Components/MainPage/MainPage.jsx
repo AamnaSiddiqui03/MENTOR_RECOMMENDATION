@@ -11,16 +11,13 @@ import Login from '../Auth/Login'
 
 
 export default function MainPage() {
-  let x=0;
   return (
     <div className='mainbody'>
       <Navbar />
       <GettingStarted />
       <AboutUs/>
       <Contactus/>
-      <Footer/>
-      
-
+      <Footer/>      
     </div>
   )
 }
