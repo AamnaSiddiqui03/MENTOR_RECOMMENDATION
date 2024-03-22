@@ -4,6 +4,8 @@ import React, { useState, useCallback, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSocket } from "../../../Context/webrtc/SocketProvider";
 // import Navbar from "./Navbar"; // Import Navbar component
+import Navbar from "../../AllPage/Navbar";
+import Footer from "../../AllPage/Footer";
 import "../../../assets/css/lobbyscreen.css";
 
 const LobbyScreen = () => {
@@ -38,8 +40,8 @@ const LobbyScreen = () => {
 
   return (
     <>
-      {/* <Navbar /> Use the Navbar component */}
-      <div className="webrtc-container">
+      <Navbar />
+      <div className="webrtc-container" style={{"height":"470px", 'marginTop':'60px'}}>
         <h1 className="aboutusH1">Lobby</h1>
         <form className="webrtc-form" onSubmit={handleSubmitForm}>
           <label className="webrtc-label" htmlFor="email">Email ID</label>
@@ -63,6 +65,7 @@ const LobbyScreen = () => {
           <button className="webrtc-button">Join</button>
         </form>
       </div>
+        <Footer/>
     </>
   );
 };

@@ -30,6 +30,10 @@ export default function Contactus() {
       console.error("Error sending email:", error);
       alert("Failed to send email");
     }
+
+    setEmail('');
+    setQuery('');
+    setName('');
   };
 
 

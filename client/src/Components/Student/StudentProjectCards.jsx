@@ -66,7 +66,7 @@ export default function StudentProjectCards(props) {
             props.setshowPpop(true);
             props.setShowUpdate(false);
           }}
-          className="flex justify-center items-center border-dotted border-2 border-blue-500 p-4 w-full h-full hover:scale-105 hover:cursor-pointer"
+          className="flex justify-center items-center border-dotted border-2 border-blue-500 p-20 w-full h-full hover:scale-105 hover:cursor-pointer"
         >
           <div className="text-center">
             <h1 className="my-2 "> ADD PROJECT</h1>

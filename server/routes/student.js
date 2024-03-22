@@ -17,8 +17,9 @@ const fetchuser = require('../middlewares/fetchuser');
 
 router.post('/addDetails', fetchuser, async (req, res) => {
     const userid = req.user.id;
+    
     try {
-        console.log(req.body.userid);
+        // console.log(req.body.userid);
         const user = await student.create({
             userid: userid,
             name: req.body.name,
