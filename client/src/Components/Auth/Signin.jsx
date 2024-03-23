@@ -44,10 +44,10 @@ const cut=()=>{
 
 
 const handlesigninonclick = () => {
-  fetch('http://localhost:8080/api/auth/signup/student', {
+  fetch('http://localhost:8080/api/auth/signup', {
     method: 'POST',
     headers: { 'Content-type': 'application/json' },
-    body: JSON.stringify({ email: Signindetails.email, name: Signindetails.name, password: Signindetails.password })
+    body: JSON.stringify({ email: Signindetails.email, name: Signindetails.name, password: Signindetails.password, isMentor: isMentor})
   })
     .then((resp) => {
       if (resp.ok) {

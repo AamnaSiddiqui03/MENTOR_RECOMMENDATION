@@ -9,6 +9,31 @@ import Footer from "../../AllPage/Footer";
 import "../../../assets/css/lobbyscreen.css";
 
 const LobbyScreen = () => {
+  const [userdet, setUserDet] = useState(null);
+
+  useEffect(() => {
+    fetchUserDetails();
+}, []);
+
+const fetchUserDetails = async () => {
+    try {
+        const response = await fetch('http://localhost:8080/api/auth/getUser', {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "auth-token": localStorage.getItem("token")
+            }
+        });
+        if (!response.ok) {
+            throw new Error('Failed to fetch user details');
+        }
+        const data = await response.json();
+        setUserDet(data.result);
+    } catch (error) {
+        console.error("Error fetching user details:", error);
+    }
+};
+
   const [email, setEmail] = useState("");
   const [room, setRoom] = useState("");
 
@@ -42,7 +67,7 @@ const LobbyScreen = () => {
     <>
       <Navbar />
       <div className="webrtc-container" style={{"height":"470px", 'marginTop':'60px'}}>
-        <h1 className="aboutusH1">Lobby</h1>
+        <h1 className="aboutusH1">Lobby {userdet && userdet.isMentor ? "mentor":"student"}</h1>
         <form className="webrtc-form" onSubmit={handleSubmitForm}>
           <label className="webrtc-label" htmlFor="email">Email ID</label>
           <input

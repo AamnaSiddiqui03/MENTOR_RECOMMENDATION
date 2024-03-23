@@ -31,10 +31,10 @@ const jwt = require('jsonwebtoken');
 
 
 //ROUTE 1: CREATING USER
-router.post('/signup/student', async (req, res) => {
+router.post('/signup', async (req, res) => {
     try {
-        const { email, name, password } = req.body;
-        const isMentor = 0;
+        const { email, name, password, isMentor } = req.body;
+        // const isMentor = 0;
 
         // Hash the password
         const hash = await bcrypt.hash(password, saltRounds);
@@ -47,7 +47,8 @@ router.post('/signup/student', async (req, res) => {
         // Send success response
         const data = {
             user: {
-                id: email
+                id: email,
+                isMentor: isMentor
             }
         };
         const authtoken = jwt.sign(data, JWT_SECRET);
@@ -90,7 +91,8 @@ router.post('/login/student', async (req, res) => {
                     if (result) {
                         const data = {
                             user: {
-                                id: email // Use the provided email
+                                id: email,
+                                isMentor: results[0].isMentor
                             }
                         };
                         const authtoken = jwt.sign(data, JWT_SECRET);
@@ -177,7 +179,7 @@ router.delete('/deleteUser', fetchuser, async (req, res) => {
         }
     } catch (error) {
         console.error("error in deleting user", error);
-        res.status(500).send({message: "Internal server error"})
+        res.status(500).send({ message: "Internal server error" })
     }
 })
 

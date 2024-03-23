@@ -12,8 +12,19 @@ export default function CardHomeDisplay(person) {
     </div>
     <h2>{person.name}</h2>
     <h4>{person.work?person.work: `${first}, ${second}, ${third}`}</h4>
-    <p>{person.bio?person.bio: (person.matchscore===1? 'Its a Match!!': 'Similar recommended')}</p>
-
+    <p>
+    {person.bio
+        ? person.bio
+        : person.matchscore === 1
+            ? <>
+                It's a Match!! <br/>
+                <a href='https://www.linkedin.com/mynetwork/' target='_blank' rel='noopener noreferrer'>www.linkedin.com/{person.name.toLowerCase()}</a>
+              </>
+            : <>
+                Similar recommended  <br/> <a href='https://www.linkedin.com/mynetwork/' target='_blank' rel='noopener noreferrer'>www.linkedin.com/{person.name.toLowerCase()}</a>
+              </>
+    }
+</p>  
 </div>
   )
 }
