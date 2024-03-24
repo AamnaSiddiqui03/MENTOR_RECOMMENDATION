@@ -44,6 +44,9 @@ export default function Navbar() {
             <li className="mx-11 hover:text-discord hover:scale-105  px-4 py-1 hover:bg-white hover:rounded-2xl">
               <NavLink to="/profile">Profile</NavLink>
             </li>
+            <li className="mx-11 hover:text-discord hover:scale-105  px-4 py-1 hover:bg-white hover:rounded-2xl">
+              <NavLink to="/admin">Admin</NavLink>
+            </li>
           </ul>
         </div>
         <div>

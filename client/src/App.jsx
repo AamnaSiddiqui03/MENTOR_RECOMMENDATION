@@ -10,6 +10,7 @@ import SignIn from './Components/Auth/Signin';
 import ProfilePage from './Components/ProfilePage/ProfilePage';
 import LobbyScreen from './Components/webrtc/Screens/Lobby';
 import RoomPage from './Components/webrtc/Screens/Room';
+import Admin from './Components/Admin/Admin';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path='/profile' element={<ProfilePage />} />
           <Route path='/virtualmeet' element={<LobbyScreen />} />
           <Route path='/room/:roomId' element={<RoomPage />} />
+          <Route path='/admin' element={<Admin/>} />
         </Routes>
       </div>
     </StudentState>
