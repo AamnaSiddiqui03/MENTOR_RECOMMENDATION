@@ -9,12 +9,13 @@ const AdminDashboard = (props) => {
 
     const chart = new Chart(ctx, {
       type: props.type,
+      
       data: {
         labels: ['Mentors', 'Students'],
         datasets: [
           {
             label: 'Count',
-            data: [45, 20], // Replace with your actual data
+            data: [props.mentorCount, props.studentCount], // Replace with your actual data
             backgroundColor: ['rgba(54, 162, 235, 0.5)', 'rgba(255, 99, 132, 0.5)'],
             borderColor: ['rgba(54, 162, 235, 1)', 'rgba(255, 99, 132, 1)'],
             borderWidth: 1,

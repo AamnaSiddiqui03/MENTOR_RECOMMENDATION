@@ -184,4 +184,37 @@ router.delete('/deleteUser', fetchuser, async (req, res) => {
 })
 
 
+
+
+
+
+//ROUTE 6: Fetch all mentor and student details
+router.get('/allDetails', async (req, res) => {
+    try {
+        const connection = await pool.getConnection();
+        const [mentors] = await connection.query('SELECT * FROM users WHERE isMentor = ?', [1]); // Fetch all mentors
+        const [students] = await connection.query('SELECT * FROM users WHERE isMentor = ?', [0]); // Fetch all students
+        connection.release();
+        res.status(200).json({ success: true, mentors, students });
+    } catch (error) {
+        console.error('Error fetching all details:', error);
+        res.status(500).json({ success: false, message: 'Internal server error' });
+    }
+});
+
+//ROUTE 7: Fetch count of mentors and students
+router.get('/count', async (req, res) => {
+    try {
+        const connection = await pool.getConnection();
+        const [mentorCount] = await connection.query('SELECT COUNT(*) AS count FROM users WHERE isMentor = ?', [1]); // Count of mentors
+        const [studentCount] = await connection.query('SELECT COUNT(*) AS count FROM users WHERE isMentor = ?', [0]); // Count of students
+        connection.release();
+        res.status(200).json({ success: true, mentorCount: mentorCount[0].count, studentCount: studentCount[0].count });
+    } catch (error) {
+        console.error('Error fetching count:', error);
+        res.status(500).json({ success: false, message: 'Internal server error' });
+    }
+});
+
+
 module.exports = router;

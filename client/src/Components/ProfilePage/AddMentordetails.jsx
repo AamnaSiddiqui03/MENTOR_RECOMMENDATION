@@ -22,25 +22,22 @@ export default function AddMentorDetails() {
     });
     const fetchDetails = async () => {
         try {
-          const response = await fetch('http://localhost:8080/api/mentors/fetchMentor', {
-            method: "GET",
-            headers: {
-              "Content-Type": "application/json",
-              "auth-token": localStorage.getItem('token')
-            }
-          });
-          const data = await response.json();
-          if(data.length>0){
-            setProfile(false);
-          }
-          console.log(data[0]);
-          setMentorDetails(data[0]);
-          // Further logic to handle the response data
+            const response = await fetch('http://localhost:8080/api/mentors/fetchMentor', {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                    "auth-token": localStorage.getItem('token')
+                }
+            });
+            const data = await response.json();
+            console.log('Received mentor data:', data); // Log the received data
+            // Further logic to handle the response data
         } catch (error) {
-          console.error("An error occurred while fetching details:", error);
-          // Handle the error here
+            console.error("An error occurred while fetching details:", error);
+            // Handle the error here
         }
-      };
+    };
+    
 
     const addDetails = async (mentorDetails) => {
         try {

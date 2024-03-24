@@ -7,38 +7,57 @@ import AdminDashboard from "./AdminChart";
 
 export default function Admin() {
   const [details, setDetails] = useState([]);
-  const [count, setCount] =useState([]);
+  const [mentorCount, setMentorCount] = useState(0);
+  const [studentCount, setStudentCount] = useState(0);
+  const [studentDetails,setStudentDetails] = useState([]);
 
-  useEffect(()=>{
+  useEffect(() => {
     fetchAllTableData();
     fetchCount();
-    
-  },[count])
-
-  const handleDelete= async(email)=>{
-    const response = fetch(`/${email}`);
-
-  }
-
-  const fetchAllTableData =() =>{
-
-  }
-
-  const fetchCount=()=>{
-
-  }
-
-  // Sample data for testing
-  const sampleData = [
-    { name: "John Doe", email: "johndoe@example.com", isMentor: true },
-    { name: "Jane Smith", email: "janesmith@example.com", isMentor: false },
-    { name: "Alice Johnson", email: "alicejohnson@example.com", isMentor: true },
-  ];
-
-  // useEffect to simulate fetching data and updating state
-  useEffect(() => {
-    setDetails(sampleData);
   }, []);
+
+  const handleDelete = async (email) => {
+    try {
+      const response = await fetch(`/${email}`, {
+        method: 'DELETE',
+      });
+      if (response.ok) {
+        // Remove the deleted user from the details state
+        setDetails((prevDetails) => prevDetails.filter((user) => user.email !== email));
+        console.log('User deleted successfully:', email);
+      } else {
+        console.error('Failed to delete user:', response.statusText);
+      }
+    } catch (error) {
+      console.error('Error deleting user:', error);
+    }
+  };
+
+  const fetchAllTableData = () => {
+    fetch('http://localhost:8080/api/auth/allDetails')
+      .then((response) => response.json())
+      .then((data) => {
+        console.log('Fetched all details:', data);
+        setDetails(data.mentors);
+        setStudentDetails(data.students);
+      })
+      .catch((error) => {
+        console.error('Error fetching mentor and student details:', error);
+      });
+  };
+
+  const fetchCount = () => {
+    fetch('http://localhost:8080/api/auth/count')
+      .then((response) => response.json())
+      .then((data) => {
+        console.log('Fetched count:', data);
+        setMentorCount(data.mentorCount);
+        setStudentCount(data.studentCount);
+      })
+      .catch((error) => {
+        console.error('Error fetching count:', error);
+      });
+  };
 
   return (
     <>
@@ -58,36 +77,31 @@ export default function Admin() {
         </div>
       </div>
 
+      <h1 className="aboutusH1 my-10">COUNT</h1>
+      <div className="flex justify-center">
+        <table className="w-full table-fixed">
+          <tbody>
+            <tr>
+              <td className="w-1/2 text-2xl text-center text-medblue">COUNT MENTOR<br />{mentorCount}</td>
+              <td className="w-1/2 text-2xl text-center text-medblue">COUNT STUDENT <br /> {studentCount} </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
-        <h1 className="aboutusH1 my-10">COUNT</h1>
-        <div className="flex justify-center">
-  <table className="w-full table-fixed">
-    <tbody>
-      <tr>
-        <td className="w-1/2 text-2xl text-center text-medblue">COUNT MENTOR<br />400</td>
-        <td className="w-1/2 text-2xl text-center text-medblue">COUNT STUDENT <br /> 300 </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+      <div className="flex flex-row">
+        <div className="" style={{ 'width': '50%' }}>
+          <AdminDashboard type={'doughnut'} mentorCount={mentorCount} studentCount={studentCount} />
+        </div>
+        <div className="" style={{ 'width': '40%' }}>
+          <AdminDashboard type={'pie'} studentCount={studentCount} mentorCount={mentorCount}/>
+        </div>
+      </div>
+      <div className="my-20">
+        <AdminDashboard type={'bar'} studentCount={studentCount} mentorCount={mentorCount}/>
+      </div>
 
-<div className="flex flex-row">
-    
-<div className="" style={{'width':'50%'}}>
-    <AdminDashboard type={'doughnut'}/>
-</div>
-<div className="" style={{'width':'40%'}}>
-<AdminDashboard type={'pie'}/>
-</div>
-</div>
-<div className="my-20">
-<AdminDashboard type={'bar'}/>
-
-</div>
-
-
-
-<div>
+      <div>
         <h1 className="aboutusH1 my-10">All details</h1>
         <div className="flex justify-center items-center">
           <table className="border-collapse border rounded-lg overflow-hidden">
@@ -100,13 +114,29 @@ export default function Admin() {
               </tr>
             </thead>
             <tbody>
+              <h1 className='text-center'>Mentor details</h1>
               {details.map((item, index) => (
                 <tr key={index}>
                   <td className="border px-4 py-2">{item.name}</td>
                   <td className="border px-4 py-2">{item.email}</td>
                   <td className="border px-4 py-2">{item.isMentor ? "Yes" : "No"}</td>
                   <td className="border px-4 py-2">
-                    <button onClick={handleDelete(item.email)} className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded">
+
+                    <button onClick={() => handleDelete(item.email)} className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded">
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+              ))}
+              <h1 className="text-center">Student details</h1>
+              {studentDetails.map((item, index) => (
+                <tr key={index}>
+                  <td className="border px-4 py-2">{item.name}</td>
+                  <td className="border px-4 py-2">{item.email}</td>
+                  <td className="border px-4 py-2">{item.isMentor ? "Yes" : "No"}</td>
+                  <td className="border px-4 py-2">
+
+                    <button onClick={() => handleDelete(item.email)} className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded">
                       Delete
                     </button>
                   </td>
@@ -115,7 +145,6 @@ export default function Admin() {
             </tbody>
           </table>
         </div>
-
       </div>
 
       <Footer />
