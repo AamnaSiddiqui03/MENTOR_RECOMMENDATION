@@ -29,6 +29,7 @@ export default function ProfilePage() {
             }
             const data = await response.json();
             setUserDet(data.result);
+
         } catch (error) {
             console.error("Error fetching user details:", error);
         }
@@ -63,6 +64,38 @@ export default function ProfilePage() {
         const confirmDelete = window.confirm("Are you sure you want to delete your profile?");
         if (confirmDelete) {
             try {
+
+                try{
+                    if(userdet.isMentor){
+                    const response = await fetch('http://localhost:8080/api/mentors/deleteMentor', {
+                        method: "DELETE",
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'auth-token': localStorage.getItem("token")
+                        }
+                      
+                    });
+                    if(!response.ok) {
+                        throw new Error('Failed delete mentor details');
+                    }
+
+                }else{
+                    const response = await fetch('http://localhost:8080/api/student/deleteAllStudents', {
+                        method: "DELETE",
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'auth-token': localStorage.getItem("token")
+                        }
+                      
+                    });
+                    if(!response.ok) {
+                        throw new Error('Failed delete mentor details');
+                    }
+
+                }
+               }catch (error) {
+                    console.error("Error deleting Mentor details:", error);
+                }
                 const response = await fetch('http://localhost:8080/api/auth/deleteUser', {
                     method: "DELETE",
                     headers: {

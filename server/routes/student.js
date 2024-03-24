@@ -125,4 +125,21 @@ router.get('/fetchNotes', fetchuser, async (req, res) => {
     }
 });
 
+//ROUTE 5 
+router.delete('/deleteAllStudents',fetchuser,async(req,res) =>{
+    try{
+        const user= await student.deleteMany({userid: req.user.id});
+        if(user){
+            res.status(200).send(user);
+
+        } else{
+            res.status(404).json({ error: 'user not found' });
+        }
+    }catch(error){
+        console.error(error.message);
+        res.status(500).send("Some Unexpected error has occurred");
+    }
+
+});
+
 module.exports = router;

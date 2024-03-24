@@ -11,7 +11,7 @@ const emailToSocketIdMap = new Map();
 const socketidToEmailMap = new Map();
 
 io.on("connection", (socket) => {
-  console.log(`Socket Connected`, socket.id);
+  // console.log(`Socket Connected`, socket.id);
   socket.on("room:join", (data) => {
     const { email, room } = data;
     emailToSocketIdMap.set(email, socket.id);
@@ -30,12 +30,12 @@ io.on("connection", (socket) => {
   });
 
   socket.on("peer:nego:needed", ({ to, offer }) => {
-    console.log("peer:nego:needed", offer);
+    // console.log("peer:nego:needed", offer);
     io.to(to).emit("peer:nego:needed", { from: socket.id, offer });
   });
 
   socket.on("peer:nego:done", ({ to, ans }) => {
-    console.log("peer:nego:done", ans);
+    // console.log("peer:nego:done", ans);
     io.to(to).emit("peer:nego:final", { from: socket.id, ans });
   });
 });
@@ -58,6 +58,7 @@ app.get('/', (req, resp)=>{
 //import the routes
 
 app.use("/api/auth" , require("./routes/auth"));
+app.use("/admin" , require("./routes/admin"));
 app.use("/api/gmail" , require("./routes/gmail"));
 app.use("/api/mentors" , require("./routes/mentors"));
 app.use("/api/student" , require("./routes/student"));
