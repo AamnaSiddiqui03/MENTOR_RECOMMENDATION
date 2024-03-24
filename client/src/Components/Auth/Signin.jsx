@@ -59,7 +59,10 @@ const handlesigninonclick = () => {
     .then((data) => {
       localStorage.setItem("token", data.authtoken);
       // localStorage.setItem("userid", data.userid);
+
       setSigninstatus("User Signed Up Successfully");
+      alert("User signed up successfully");
+      navigate('/login')
       // navigate recommended
     })
     .catch((err) => {

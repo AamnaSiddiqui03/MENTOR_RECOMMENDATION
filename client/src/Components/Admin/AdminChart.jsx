@@ -9,7 +9,6 @@ const AdminDashboard = (props) => {
 
     const chart = new Chart(ctx, {
       type: props.type,
-      
       data: {
         labels: ['Mentors', 'Students'],
         datasets: [
@@ -41,7 +40,7 @@ const AdminDashboard = (props) => {
     return () => {
       chart.destroy();
     };
-  }, []);
+  }, [props.mentorCount, props.studentCount]);
 
   return (
     <div className="chart-container">

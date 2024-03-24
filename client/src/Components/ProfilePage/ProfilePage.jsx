@@ -11,6 +11,19 @@ export default function ProfilePage() {
     const [isEditing, setIsEditing] = useState(false);
     const navigate = useNavigate();
 
+
+
+    useEffect(() => {
+      const token = localStorage.getItem("token");
+    //   console.log("Token:", token);
+      if (!token) {
+        navigate("/login");
+      }
+  
+  
+    }, []);
+
+
     useEffect(() => {
         fetchUserDetails();
     }, []);

@@ -18,7 +18,7 @@ export default function Recommend() {
 
   useEffect(() => {
     const token = localStorage.getItem("token");
-    console.log("Token:", token);
+    // console.log("Token:", token);
     if (!token) {
       navigate("/login");
     }

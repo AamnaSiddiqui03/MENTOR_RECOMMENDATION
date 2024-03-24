@@ -9,7 +9,7 @@ try {
         pool = mysql.createPool({
         user: 'root',
         host: 'localhost',
-        password: 'Alaka@30',
+        password: 'root',
         database: 'mentordbms',
         waitForConnections: true,
         connectionLimit: 10,

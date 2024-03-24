@@ -44,17 +44,29 @@ router.post('/signup', async (req, res) => {
         const [result] = await connection.query('INSERT INTO users (email, name, password, isMentor) VALUES (?, ?, ?, ?)', [email, name, hash, isMentor]);
         connection.release();
 
-        // Send success response
-        const data = {
-            user: {
-                id: email,
-                isMentor: isMentor
-            }
-        };
-        const authtoken = jwt.sign(data, JWT_SECRET);
-        return res.status(200).json({ success: true, message: 'User signed up successfully', authtoken, userid: email });
-
-    } catch (error) {
+        if (result) {
+            if(result[0].email=='fatima@gmail.com'){
+                const data = {
+                    user: {
+                        id: email,
+                        isMentor: result[0].isMentor,
+                        Admin: true
+                    }
+                };
+            const authtoken = jwt.sign(data, JWT_SECRET);
+            return res.json({ success: true, authtoken, userid: email, Admin:'Admin' });
+            }else{
+            const data = {
+                user: {
+                    id: email,
+                    isMentor: result[0].isMentor,
+                    Admin: false
+                }
+            };
+            const authtoken = jwt.sign(data, JWT_SECRET);
+            return res.json({ success: true, authtoken, userid: email });
+        }
+    } }catch (error) {
         console.error('Error signing up user:', error);
         return res.status(500).json({ success: false, message: 'Internal server error' });
     }
@@ -66,6 +78,7 @@ router.post('/signup', async (req, res) => {
 router.post('/login/student', async (req, res) => {
     try {
         const { email, password } = req.body;
+        const Admin= true;
 
         // Check if email and password are provided
         if (!email || !password) {
@@ -88,15 +101,29 @@ router.post('/login/student', async (req, res) => {
                     console.error('Error comparing passwords:', err);
                     return res.status(500).json({ success: false, message: 'Error logging in user' });
                 } else {
+                  
                     if (result) {
+                        if(results[0].email=='fatima@gmail.com'){
+                            const data = {
+                                user: {
+                                    id: email,
+                                    isMentor: results[0].isMentor,
+                                    Admin: true
+                                }
+                            };
+                        const authtoken = jwt.sign(data, JWT_SECRET);
+                        return res.json({ success: true, authtoken, userid: email, Admin:'Admin' });
+                        }else{
                         const data = {
                             user: {
                                 id: email,
-                                isMentor: results[0].isMentor
+                                isMentor: results[0].isMentor,
+                                Admin: false
                             }
                         };
                         const authtoken = jwt.sign(data, JWT_SECRET);
                         return res.json({ success: true, authtoken, userid: email });
+                    }
                     } else {
                         // Passwords don't match
                         return res.status(401).json({ success: false, message: 'Invalid credentials' });
@@ -123,13 +150,15 @@ router.post('/login/student', async (req, res) => {
 //ROUTE 3: FetchUser , LOGGEDIN REQUIRED(fetchuser)
 router.get('/getUser', fetchuser, async (req, res) => {
     let userid = req.user.id;
+    // let Admin=req.user.Admin?req.user.Admin:false;
+    let Admin=req.user.Admin;
     //find user with this email and not select its password
     try {
         const connection = await pool.getConnection();
         const [result] = await connection.query('SELECT email, name, isMentor FROM users WHERE email = ?', [userid]);
         connection.release();
         if (result.length > 0) {
-            res.status(200).send({ success: true, result: result[0] });
+            res.status(200).send({ success: true, result: result[0], Admin:Admin });
         } else {
             res.status(401).send({ success: false, message: "You are Unauthorised" })
         }
@@ -215,6 +244,24 @@ router.get('/count', async (req, res) => {
         res.status(500).json({ success: false, message: 'Internal server error' });
     }
 });
+
+router.delete('/deleteMyUser/:id', async (req, res) => {
+    //we are getting the user id
+    try {
+        const userid = req.params.id;
+        const connection = await pool.getConnection();
+        //DELETE FROM table_name WHERE condition
+        const [result] = await connection.query('DELETE FROM users WHERE email=?', [userid])
+        if (result.affectedRows > 0) {
+            res.status(200).send({ success: true, message: "User deleted successfully" });
+        } else {
+            res.status(404).send({ success: false, message: "User not found or no changes were made" });
+        }
+    } catch (error) {
+        console.error("error in deleting user", error);
+        res.status(500).send({ message: "Internal server error" })
+    }
+})
 
 
 module.exports = router;

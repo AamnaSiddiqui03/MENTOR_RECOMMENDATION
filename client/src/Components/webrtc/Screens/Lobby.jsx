@@ -10,6 +10,18 @@ import "../../../assets/css/lobbyscreen.css";
 
 const LobbyScreen = () => {
   const [userdet, setUserDet] = useState(null);
+  const navigate = useNavigate();
+
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    // console.log("Token:", token);
+    if (!token) {
+      navigate("/login");
+    }
+
+
+  }, []);
 
   useEffect(() => {
     fetchUserDetails();
@@ -38,7 +50,7 @@ const fetchUserDetails = async () => {
   const [room, setRoom] = useState("");
 
   const socket = useSocket();
-  const navigate = useNavigate();
+ 
 
   const handleSubmitForm = useCallback(
     (e) => {

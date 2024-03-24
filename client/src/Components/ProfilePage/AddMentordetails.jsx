@@ -10,15 +10,15 @@ export default function AddMentorDetails() {
     const [mentorDetails, setMentorDetails] = useState({
         // email: 'a@gmail.com',
         isMentor: true,
-        name: 'a',
-        photo: 'a',
-        gender: 'a',
-        expertise: ['a'],
-        working_place: 'a',
-        bio: 'a',
-        experience: '',
-        projects: ['a'],
-        qualifications: 'a'
+        name: 'Apeksha AJ',
+        photo: 'https://images.generated.photos/DP_fbBwg9NH_nyXz3ONtaI433PCEeuj4g9j4mT2a8_s/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/NDc0ODgwXzAyNDc4/MTVfMDc5NjEzMS5q/cGc.jpg',
+        gender: 'f',
+        expertise: ["Web Devlopment", "Database Management", "Big Data"],
+        working_place: 'Google Company',
+        bio: 'A passionate developer with expertise in web development.',
+        experience: '7',
+        projects: ['ecomm','docker','management'],
+        qualifications: 'Phd in Web development'
     });
     const fetchDetails = async () => {
         try {
@@ -30,7 +30,7 @@ export default function AddMentorDetails() {
                 }
             });
             const data = await response.json();
-            console.log('Received mentor data:', data); // Log the received data
+            // console.log('Received mentor data:', data); // Log the received data
             // Further logic to handle the response data
         } catch (error) {
             console.error("An error occurred while fetching details:", error);
